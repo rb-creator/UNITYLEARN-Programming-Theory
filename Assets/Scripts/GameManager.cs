@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    private int score;
-    private int arrows;
+    public static GameManager Instance;
 
-    void Awake()
+    [SerializeField]
+    private int _score;
+
+    [SerializeField]
+    private int _arrows;
+
+    private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
+        ImplementSingleton();
+    }
+
+    private void ImplementSingleton()
+    {
+        if (Instance != null)
         {
             Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void AddScore(int points)
     {
-        score += points;
+        _score += points;
+        Debug.Log(_score);
     }
 
     public void ActivatePowerUp()

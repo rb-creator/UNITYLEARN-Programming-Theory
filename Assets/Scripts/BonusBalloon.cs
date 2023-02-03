@@ -6,7 +6,8 @@ public class BonusBalloon : Balloon
 {
     public override void Pop()
     {
-        GameManager.instance.AddScore(points * 2);
+        GameManager.Instance.AddScore(points * 2);
+        Debug.Log("Bonus Balloon Popped!");
         Destroy(gameObject);
     }
 }

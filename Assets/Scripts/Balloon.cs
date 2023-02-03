@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Balloon : MonoBehaviour
+public class Balloon : MonoBehaviour
 {
-    public float speed;
-    public int points;
+    [SerializeField]
+    private protected float speed;
 
-    public abstract void Pop();
+    [SerializeField]
+    private protected int points;
+
+    public virtual void Pop()
+    {
+
+    }
 
     void Update()
     {

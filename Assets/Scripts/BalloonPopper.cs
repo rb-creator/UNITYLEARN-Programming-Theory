@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BalloonPopper : MonoBehaviour
 {
-    private Balloon balloon;
+    private Balloon _balloon;
 
     private void Start()
     {
-        balloon = GetComponent<Balloon>();
+        _balloon = GetComponent<Balloon>();
     }
 
     private void Update()
