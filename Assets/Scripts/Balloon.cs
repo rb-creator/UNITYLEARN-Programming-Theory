@@ -5,18 +5,36 @@ using UnityEngine;
 public class Balloon : MonoBehaviour
 {
     [SerializeField]
-    private protected float speed;
+    private protected float _speed;
 
     [SerializeField]
-    private protected int points;
+    private protected int _points;
+
+    private int _yBoundary = 10;
+    
+    void Update()
+    {
+        FallingMotion();
+        DestroyWhenOutOfBounds();
+    }
+
+    void FallingMotion()
+    {
+        transform.position += Vector3.down * _speed * Time.deltaTime;
+    }
 
     public virtual void Pop()
     {
 
     }
 
-    void Update()
+    private void DestroyWhenOutOfBounds()
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
+        if (transform.position.y < -_yBoundary)
+        {
+            //Debug.Log("Should be destroyed now");
+            Destroy(gameObject);
+        }
     }
+
 }

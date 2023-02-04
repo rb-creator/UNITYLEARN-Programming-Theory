@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private int _score;
-
-    [SerializeField]
-    private int _arrows;
+    public int Score { get { return _score; } }
 
     private void Awake()
     {
@@ -32,11 +30,11 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         _score += points;
-        Debug.Log(_score);
+        //Debug.Log(_score);
     }
 
     public void ActivatePowerUp()
     {
-        // code for activating power-up
+        Debug.Log("PowerUp Activated!");
     }
 }

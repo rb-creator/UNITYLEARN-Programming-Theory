@@ -6,8 +6,9 @@ public class PowerUpBalloon : Balloon
 {
     public override void Pop()
     {
+        GameManager.Instance.AddScore(_points);
         GameManager.Instance.ActivatePowerUp();
-        Debug.Log("PowerUpBalloon Popped!");
+        //Debug.Log("PowerUpBalloon Popped!");
         Destroy(gameObject);
     }
 }
