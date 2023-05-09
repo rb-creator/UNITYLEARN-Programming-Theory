@@ -9,10 +9,10 @@ public class ScoreKeeper : MonoBehaviour
 
     void Update()
     {
-        UpdateScore();
+        UpdateScore(); //ABSTRACTION
     }
 
-    void UpdateScore()
+    void UpdateScore() //ABSTRACTION
     {
         ScoreText.text = "Score: " + GameManager.Instance.Score;
     }

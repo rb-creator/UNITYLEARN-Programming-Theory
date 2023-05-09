@@ -13,6 +13,11 @@ public class BalloonPopper : MonoBehaviour
 
     private void Update()
     {
+        InputController(); //ABSTRACTION
+    }
+
+    void InputController() //ABSTRACTION
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -27,4 +32,5 @@ public class BalloonPopper : MonoBehaviour
             }
         }
     }
+
 }

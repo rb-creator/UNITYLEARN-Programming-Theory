@@ -14,21 +14,21 @@ public class Balloon : MonoBehaviour
     
     void Update()
     {
-        FallingMotion();
-        DestroyWhenOutOfBounds();
+        FallingMotion(); //ABSTRACTION
+        DestroyWhenOutOfBounds(); //ABSTRACTION
     }
 
-    void FallingMotion()
+    void FallingMotion() //ABSTRACTION
     {
         transform.position += Vector3.down * _speed * Time.deltaTime;
     }
 
     public virtual void Pop()
     {
-
+        // INHERITANCE
     }
 
-    private void DestroyWhenOutOfBounds()
+    private void DestroyWhenOutOfBounds() //ABSTRACTION
     {
         if (transform.position.y < -_yBoundary)
         {

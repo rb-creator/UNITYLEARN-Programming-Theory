@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpBalloon : Balloon
+public class PowerUpBalloon : Balloon // INHERITANCE
 {
-    public override void Pop()
+    public override void Pop() // POLYMORPHISM
     {
         GameManager.Instance.AddScore(_points);
         GameManager.Instance.ActivatePowerUp();

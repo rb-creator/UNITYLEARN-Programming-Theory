@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private int _score;
-    public int Score { get { return _score; } }
+    public int Score { get { return _score; } } //ENCAPSULATION
 
     private void Awake()
     {
-        ImplementSingleton();
+        ImplementSingleton(); //ABSTRACTION
     }
 
-    private void ImplementSingleton()
+    private void ImplementSingleton() //ABSTRACTION
     {
         if (Instance != null)
         {
